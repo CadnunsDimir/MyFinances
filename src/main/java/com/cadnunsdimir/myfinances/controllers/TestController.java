@@ -1,4 +1,4 @@
-package com.cadnunsdimir.myfinances.controller;
+package com.cadnunsdimir.myfinances.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
