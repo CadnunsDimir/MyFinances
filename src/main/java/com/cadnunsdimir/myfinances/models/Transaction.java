@@ -1,12 +1,32 @@
 package com.cadnunsdimir.myfinances.models;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity(name = "bank_transaction")
 public class Transaction {
+
+    @Id
+    @GeneratedValue
+    private Integer id = 0;
+
+    @Column
     private String description;
+
+    @Column
     private Double value;
+
+    @Transient
     private BankAccount account;
     private Date date;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getDescription() {
         return description;

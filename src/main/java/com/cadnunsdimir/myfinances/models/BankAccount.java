@@ -1,14 +1,18 @@
 package com.cadnunsdimir.myfinances.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.List;
 
 @Entity(name = "bank_account")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class BankAccount {
 
     @Id
+    @GeneratedValue
     private Integer id;
     @Column(unique = true)
     private String name;
@@ -43,11 +47,4 @@ public class BankAccount {
         this.initialValue = initialValue;
     }
 
-//    public List<Transaction> getTransactions() {
-//        return transactions;
-//    }
-//
-//    public void setTransactions(List<Transaction> transactions) {
-//        this.transactions = transactions;
-//    }
 }
